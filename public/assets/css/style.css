@@ -269,6 +269,14 @@ h6 {
   width: 100%;
 }
 
+/* For login btn i don't want apply above css */
+.navbar .loginBtn:hover:before,
+.navbar .loginBtn:focus:before,
+.navbar .loginBtn.active:before {
+  visibility: hidden;
+  width: 0px;
+}
+
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,

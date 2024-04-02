@@ -67,7 +67,7 @@ function Header() {
             <NavItem to="/blogs" children="Blogs" />
             <NavItem to="/feedback" children="Feedback" />
             <NavItem to="/contactus" children="Contact Us" />
-            <li><NavLink to='/login' className="btn-get-started scrollto m-3">Login</NavLink></li>
+            <li ><NavLink to='/login' className="loginBtn btn-get-started scrollto m-3">Login</NavLink></li>
           </ul>
           <div className={`mobile-nav-toggle ${showMenu ? 'toggle-x' : ''}`} onClick={toggleMenu}>
             <i className={`bi ${showMenu ? 'bi-x' : 'bi-list'}`}></i>
