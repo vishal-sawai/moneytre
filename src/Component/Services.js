@@ -23,7 +23,7 @@ function Services() {
           <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div className="icon-box">
               <div className="icon"><i className="bx bx-award"></i></div>
-              <h4><NavLink to="/wallofappreciation" activeClassName="active" onClick={scrollToTop}>Wall Of Appreciation</NavLink></h4>
+              <h4><NavLink to="/wallofappreciation" activeClassName="active" onClick={scrollToTop}>Wall of Appreciation</NavLink></h4>
 
               <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
             </div>

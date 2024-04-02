@@ -12,20 +12,24 @@ import NewletterSection from '../Component/NewletterSection'
 import Services from '../Component/Services'
 
 
+
 function Dashboard() {
     return (
         <div className="main">
             <Topbar />
             <Header />
             <Hero />
+            <br></br>
             <AboutUsSection />
             <Counter />
             <KnowHetalSection />
             <Services />
             <FAQs />
             <ContactUsSection />
-            <NewletterSection  />
+            <NewletterSection />
             <Footer />
+
+
         </div>
     )
 }

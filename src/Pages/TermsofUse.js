@@ -7,12 +7,12 @@ import Footer from '../Component/Footer'
 function TermsofUse() {
   return (
 
-    <div className="main">
+    <div class="main">
       <Topbar />
       <Header />
 
-      <div className="breadcrumbs" data-aos="fade-in">
-        <div className="container">
+      <div class="breadcrumbs" data-aos="fade-in">
+        <div class="container">
 
           <ol>
             <li> <Link to={'/'}><a>Home</a></Link>  </li>
@@ -23,15 +23,15 @@ function TermsofUse() {
         </div>
       </div>
 
-      <div className="container">
+      <div class="container" data-aos="fade-down">
         <br></br>
-        <div className="section-title">
+        <div class="section-title">
           <h2>Terms of Use</h2>
         </div>
-        <div className="row">
-          <div className="col-lg-1"></div>
-          <div className="col-md-10 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <div className="container">
+        <div class="row">
+          <div class="col-lg-1"></div>
+          <div class="col-md-10 mt-5 mt-lg-0 d-flex align-items-strech">
+            <div class="container ">
               <p>• Moneytre allows you the access to information, services, notes and other material through its website
                 “Moneytre.in”. On accessing the website you agree to be bound by “Prime Analytics Terms” (“Terms of Use”,
                 “Privacy Policy”, “General Disclaimer”, “Newsletter Disclaimer”, “Subscription Agreement”). You will be

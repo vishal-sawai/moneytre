@@ -1,22 +1,22 @@
 import React from 'react'
-import{Link} from 'react-router-dom'
+
 
 function AboutUsSection() {
   return (
-    <section id="about" className="about section-bg">
-    <div className="container" data-aos="fade-up">
+<section id="about" class="about section-bg">
+      <div class="container" data-aos="fade-up">
 
-      <div className="section-title">
-        <h2>About Us</h2><br></br><br></br>
-        <h3>Get to Know More <a href="#"><span>About Us</span></a></h3>
+        <div class="section-title">
+          <h2>About Us</h2>
+          <h3>Get to Know More <a href="#"><span>About Us</span></a></h3>
 
-      </div>
-
-      <div className="row">
-        <div className="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-          <img src="assets/img/" className="img-fluid" alt=""/>
         </div>
-        <div className="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+        <div className="row">
+        <div className="col-lg-6 order-2 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+          <img src="assets/img/blog/blog-1.jpg" className="img-fluid" alt=""/>
+        </div>
+        <div className="col-lg-6 pt-4 pt-lg-0  content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
          
             <h3>Moneytre.in</h3>
             <ul>
@@ -34,9 +34,9 @@ function AboutUsSection() {
             </ul>
            
           </div>
+          </div>
         </div>
-      </div>
-  </section>
+    </section>
     
   )
 }

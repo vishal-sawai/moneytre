@@ -1,59 +1,76 @@
-import React from 'react';
+import React, { useState } from "react";
 import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+
+const NavItem = ({ to, children }) => (
+  <li><NavLink className="mobileNav" exact to={to} activeClassName="active mobileNav">{children}</NavLink></li>
+);
+
+const DropdownItem = ({ title, links }) => (
+  <li className="dropdown">
+    <NavLink className="mobileNav" exact to={links[0].to} activeClassName="active mobileNav"><span>{title}</span></NavLink>
+    <ul>
+      {links.map((link, index) => <NavItem key={index} {...link} />)}
+    </ul>
+  </li>
+);
 
 function Header() {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(prevState => !prevState);
+  };
+
+
+  const dropdownItems = [
+    {
+      title: "About us",
+      links: [
+        { to: "/AboutUs", children: "About Us" },
+        { to: "/knowhetal", children: "Know Hetal" },
+        { to: "/whyus", children: "Why Us" },
+      ],
+    },
+    {
+      title: "Information Pack",
+      links: [
+        { to: "/wallofappreciation", children: "Wall Of Appreciation" },
+        { to: "/onboardadvisory", children: "Onboard Advisors" },
+        { to: "/faqs", children: "FAQs" },
+        { to: "/knowledge", children: "Knowledge" },
+        { to: "/archives", children: "Archives" },
+      ],
+    },
+    {
+      title: "Products",
+      links: [
+        { to: "/product", children: "Product 1" },
+        { to: "/product", children: "Product 2" },
+        { to: "/product", children: "Product 3" },
+        { to: "/product", children: "Product 4" },
+        { to: "/product", children: "Product 5" },
+      ],
+    },
+  ];
+
   return (
     <header id="header" className="d-flex align-items-center">
       <div className="container d-flex align-items-center justify-content-between">
         <h1 className="logo"><NavLink to="/">MONEYTRE</NavLink></h1>
 
-        <nav id="navbar" className="navbar">
+        <nav id="navbar" className={`navbar ${showMenu ? 'navbar-mobile' : ''}`}>
           <ul>
-            <li><NavLink exact to="/" activeClassName="active">Home</NavLink></li>
-
-            <li className="dropdown"><a href="#">
-              <span>About us</span></a>
-              <ul>
-                <li><NavLink to="/AboutUs" activeClassName="active">About Us</NavLink></li>
-                <li><NavLink to="/knowhetal" activeClassName="active">Know Hetal</NavLink></li>
-                <li><NavLink to="/whyus" activeClassName="active">Why Us</NavLink></li>
-              </ul>
-            </li>
-
-            <li className="dropdown"><a href="#">
-              <span>Information Pack</span></a>
-              <ul>
-                <li><NavLink to="/wallofappreciation" activeClassName="active">Wall Of Appreciation</NavLink></li>
-                <li><NavLink to="/onboardadvisory" activeClassName="active">Onboard Advisors</NavLink></li>
-                <li><NavLink to="/faqs" activeClassName="active">FAQs</NavLink></li>
-                <li><NavLink to="/knowledge" activeClassName="active">Knowledge</NavLink></li>
-                <li><NavLink to="/archieves" activeClassName="active">Archives</NavLink></li>
-              </ul>
-            </li>
-
-            <li className="dropdown"><a href="#"><span>Products</span></a>
-              <ul>
-                <li><a href="#">Product 1</a></li>
-                <li><a href="#">Product 2</a></li>
-                <li><a href="#">Product 3</a></li>
-                <li><a href="#">Product 4</a></li>
-                <li><a href="#">Product 5</a></li>
-              </ul>
-            </li>
-
-            <li><NavLink to="/blogs" activeClassName="active">Blogs</NavLink></li>
-            <li><NavLink to="/feedback" activeClassName="active">FeedBack</NavLink></li>
-            <li><NavLink to="/contactus" activeClassName="active">Contact Us</NavLink></li>
-    
-            {/* <li><Link to="/login" className="login-link"><button className="btn-get-started scrollto">Login</button></Link></li> */}
-       
-            <li><NavLink to="/login" className="login-link"><button className="btn-get-started scrollto">Login</button></NavLink></li>
- 
+            <NavItem to="/" children="Home" />
+            {dropdownItems.map((item, index) => <DropdownItem key={index} {...item} />)}
+            <NavItem to="/blogs" children="Blogs" />
+            <NavItem to="/feedback" children="Feedback" />
+            <NavItem to="/contactus" children="Contact Us" />
+            <li><NavLink to='/login' className="btn-get-started scrollto m-3">Login</NavLink></li>
           </ul>
-          <i className="bi bi-list mobile-nav-toggle"></i>
+          <div className={`mobile-nav-toggle ${showMenu ? 'toggle-x' : ''}`} onClick={toggleMenu}>
+            <i className={`bi ${showMenu ? 'bi-x' : 'bi-list'}`}></i>
+          </div>
         </nav>
-
       </div>
     </header>
   );

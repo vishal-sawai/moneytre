@@ -19,7 +19,7 @@ function Disclaimer() {
           </div>
         </div>
         <br></br>
-        <div class="container">
+        <div class="container" data-aos="fade-down">
           <div class="section-title">
             <h2>General Disclaimer</h2>
           </div>

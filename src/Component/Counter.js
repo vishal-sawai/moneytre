@@ -11,7 +11,7 @@ function Counter() {
           <div className="col-lg-3 col-md-6">
             <div className="count-box">
               <i className="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" className="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" className="purecounter">0</span>
               <p>Happy Clients</p>
             </div>
           </div>
@@ -19,7 +19,7 @@ function Counter() {
           <div className="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div className="count-box">
               <i className="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" className="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" className="purecounter">0</span>
               <p>Projects</p>
             </div>
           </div>
@@ -27,7 +27,7 @@ function Counter() {
           <div className="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div className="count-box">
               <i className="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" className="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" className="purecounter">0</span>
               <p>Hours Of Support</p>
             </div>
           </div>
@@ -35,7 +35,7 @@ function Counter() {
           <div className="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div className="count-box">
               <i className="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" className="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" className="purecounter">0</span>
               <p>Hard Workers</p>
             </div>
           </div>

@@ -25,7 +25,7 @@ function Faqs() {
 <div className="main">
   <Topbar/>
   <Header/>
-  <main id="main">
+  <main id="main" >
     <div class="breadcrumbs">
       <div class="container">
         <ol>
@@ -37,7 +37,7 @@ function Faqs() {
     </div>
 
     <section id="about" class="about">
-      <div class="container">
+      <div class="container"  data-aos="fade-down">
         <div class="section-title">
           <h2>FAQ's</h2>
 
@@ -45,7 +45,7 @@ function Faqs() {
         <div>
       <Accordion open={open} toggle={toggle}>
         <AccordionItem>
-          <AccordionHeader targetId="1">Accordion Item 1</AccordionHeader>
+          <AccordionHeader targetId="1">Question No. 1</AccordionHeader>
           <AccordionBody accordionId="1">
             <strong>This is the first item&#39;s accordion body.</strong>
             You can modify any of this with custom CSS or overriding our default
@@ -55,7 +55,7 @@ function Faqs() {
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>
-          <AccordionHeader targetId="2">Accordion Item 2</AccordionHeader>
+          <AccordionHeader targetId="2">Question No. 2</AccordionHeader>
           <AccordionBody accordionId="2">
             <strong>This is the second item&#39;s accordion body.</strong>
             You can modify any of this with custom CSS or overriding our default
@@ -65,7 +65,7 @@ function Faqs() {
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>
-          <AccordionHeader targetId="3">Accordion Item 3</AccordionHeader>
+          <AccordionHeader targetId="3">Question No. 3</AccordionHeader>
           <AccordionBody accordionId="3">
             <strong>This is the third item&#39;s accordion body.</strong>
             You can modify any of this with custom CSS or overriding our default
@@ -75,7 +75,7 @@ function Faqs() {
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>
-          <AccordionHeader targetId="4">Accordion Item 4</AccordionHeader>
+          <AccordionHeader targetId="4">Question No. 4</AccordionHeader>
           <AccordionBody accordionId="4">
             <strong>This is the third item&#39;s accordion body.</strong>
             You can modify any of this with custom CSS or overriding our default
@@ -85,7 +85,7 @@ function Faqs() {
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>
-          <AccordionHeader targetId="5">Accordion Item 5</AccordionHeader>
+          <AccordionHeader targetId="5">Question No. 5</AccordionHeader>
           <AccordionBody accordionId="5">
             <strong>This is the third item&#39;s accordion body.</strong>
             You can modify any of this with custom CSS or overriding our default
@@ -95,7 +95,7 @@ function Faqs() {
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>
-          <AccordionHeader targetId="6">Accordion Item 6</AccordionHeader>
+          <AccordionHeader targetId="6">Question No. 6</AccordionHeader>
           <AccordionBody accordionId="6">
             <strong>This is the third item&#39;s accordion body.</strong>
             You can modify any of this with custom CSS or overriding our default

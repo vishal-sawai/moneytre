@@ -19,7 +19,7 @@ function Feedback() {
      </div>
       </section>
       <section id="contact" class="contact">
-        <div class="container">
+        <div class="container" data-aos="fade-down">
           <div class="section-title">
             <h2>Feedback</h2>
           </div>
@@ -37,6 +37,10 @@ function Feedback() {
                     <input type="email" class="form-control" name="email" id="email" required />
                   </div>
                 </div>
+                <div class="form-group col-md-12 mt-3 mt-md-0">
+                    <label for="name">Enter your Mobile No.</label>
+                    <input type="email" class="form-control" name="mobile" id="mobile" required />
+                  </div>
                 <div class="form-group mt-3">
                   <label for="name">Subject</label>
                   <input type="text" class="form-control" name="subject" id="subject" required />

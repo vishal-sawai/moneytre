@@ -21,7 +21,7 @@ function Knowledge() {
         </div>
       </div>
     <br></br> 
-      <div class="container">
+      <div class="container" data-aos="fade-in">
       <div class="section-title">
         <h2> Knowledge</h2>
       

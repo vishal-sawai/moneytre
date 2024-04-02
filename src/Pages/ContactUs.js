@@ -22,7 +22,7 @@ function ContactUs() {
         </div>
       </div>
       <section id="contact" class="contact">
-    <div class="container" data-aos="fade-up">
+    <div class="container" data-aos="fade-down">
 
       <div class="section-title">
        

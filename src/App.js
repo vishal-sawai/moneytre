@@ -20,6 +20,8 @@ import Blogs from './Pages/Blogs';
 import ContactUsSection from './Component/ContactUsSection';
 import BlogDetails from './Pages/BlogDetails';
 import BlogDetails2 from './Pages/BlogDetails2';
+import ForgotPassword from './Pages/ForgotPassword';
+
 
 
 
@@ -49,10 +51,7 @@ function App() {
         <Route path="/contactussection" element={<ContactUsSection />} />
         <Route path="/blogdetails" element={<BlogDetails />} />
         <Route path="/blogdetails2" element={<BlogDetails2 />} />
-      
-        
-
-
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
 
       </Routes>
     </BrowserRouter>

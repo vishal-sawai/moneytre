@@ -24,7 +24,7 @@ function PrivacyPolicy() {
 
           </div>
         </div>
-        <div class="container">
+        <div class="container" data-aos="fade-down">
           <br></br>
 
           <div class="section-title">

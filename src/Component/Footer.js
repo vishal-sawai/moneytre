@@ -1,29 +1,29 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React,{useEffect} from 'react';
+import { NavLink,useLocation } from 'react-router-dom';
 
 function scrollToTop() {
   window.scrollTo({
-    top: 0,
+    left: 0,
+    top: document.body.scrollHeight,
     behavior: "smooth"
+    
   });
 }
 
 function Footer() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+  }, [pathname]);
   return (
-    <footer id="footer">
+  <div className=''>
+      <footer id="footer">
       <div className="footer-top">
         <div className="container">
           <div className="row">
-            <div className="col-lg-3 col-md-6 footer-contact">
-              <h3><span>Moneytre</span></h3>
-              <p>
-                201, Vilux Redefine,
-                Deccan Gymkhana, Pune 411004.<br />
-                <strong>Phone:</strong> +91 74109 12161<br />
-                <strong>Email:</strong> hkot3@yahoo.com<br />
-              </p>
-            </div>
-            <div className="col-lg-3 col-md-6 footer-links">
+           
+            <div className="col-lg-3 col-md-4 footer-links">
               <h4>Useful Links</h4>
               <ul>
                 <li><i className="bx bx-chevron-right"></i> <NavLink to="/termsofuse" activeClassName="active" onClick={scrollToTop}>Terms of Use</NavLink></li>
@@ -33,7 +33,7 @@ function Footer() {
                 <li><i className="bx bx-chevron-right"></i> <NavLink to="/onboardadvisory" activeClassName="active" onClick={scrollToTop}>Onboard Advisors</NavLink></li>
               </ul>
             </div>
-            <div className="col-lg-3 col-md-6 footer-links">
+            <div className="col-lg-3 col-md-4 footer-links">
               <h4>Our Services</h4>
               <ul>
                 <li><i className="bx bx-chevron-right"></i> <NavLink to="/faqs" activeClassName="active" onClick={scrollToTop}>FAQ's</NavLink></li>
@@ -44,9 +44,18 @@ function Footer() {
                 <li><i className="bx bx-chevron-right"></i> <NavLink to="/archieves" activeClassName="active" onClick={scrollToTop}>Archives</NavLink></li>
               </ul>
             </div>
-            <div className="col-lg-3 col-md-6 footer-links">
+            <div className="col-lg-3 col-md-6 footer-contact">
+              <h3><span>Moneytre</span></h3>
+              <p>
+                201, Vilux Redefine,
+                Deccan Gymkhana, Pune 411004.<br />
+                <strong>Phone:</strong> +91 74109 12161<br />
+                <strong>Email:</strong> hkot3@yahoo.com<br />
+              </p>
+            </div>
+            <div className="col-lg-3 col-md-4 footer-links">
               <h4>Our Social Networks</h4>
-              <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <p> please follow on our websites</p>
               <div className="social-links mt-3">
                 <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
                 <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
@@ -64,6 +73,12 @@ function Footer() {
         </div>
       </div>
     </footer>
+    
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  </div>
+    
   );
 }
 

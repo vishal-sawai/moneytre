@@ -12,6 +12,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -115,6 +116,7 @@ h6 {
 /*--------------------------------------------------------------
 # Top Bar
 --------------------------------------------------------------*/
+
 #topbar {
   background: #106eea;
   height: 40px;
@@ -160,6 +162,7 @@ h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+
 #header {
   background: #fff;
   transition: all 0.5s;
@@ -292,6 +295,11 @@ h6 {
   min-width: 200px;
 }
 
+/* Show the dropdown menu when its state is 'open' */
+.dropdown.open ul {
+  display: block;
+}
+
 .navbar .dropdown ul a {
   padding: 10px 20px;
   font-weight: 400;
@@ -336,6 +344,7 @@ h6 {
   }
 }
 
+
 /**
 * Mobile Navigation 
 */
@@ -348,8 +357,9 @@ h6 {
   transition: 0.5s;
 }
 
-.mobile-nav-toggle.bi-x {
+.toggle-x {
   color: #fff;
+  font-size: 35px;
 }
 
 @media (max-width: 991px) {
@@ -359,7 +369,14 @@ h6 {
 
   .navbar ul {
     display: none;
+    position: fixed;
+    width: 200px;
+
   }
+}
+
+.navbar ul li {
+  display: block;
 }
 
 .navbar-mobile {
@@ -372,6 +389,9 @@ h6 {
   background: rgba(9, 9, 9, 0.9);
   transition: 0.3s;
   z-index: 999;
+  display: flex;
+  justify-content: center;
+  /* Center align items horizontally */
 }
 
 .navbar-mobile .mobile-nav-toggle {
@@ -384,20 +404,23 @@ h6 {
   display: block;
   position: absolute;
   top: 55px;
-  right: 15px;
+  right: 0;
   bottom: 15px;
-  left: 15px;
+  left: 0;
   padding: 10px 0;
   background-color: #fff;
   overflow-y: auto;
   transition: 0.3s;
+  width: 90%;
+  margin: auto;
+  /* Center align items horizontally */
 }
 
 .navbar-mobile a,
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #222222;
+  color: black;
 }
 
 .navbar-mobile>ul>li {
@@ -455,6 +478,8 @@ h6 {
   display: block;
 }
 
+
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -480,17 +505,29 @@ h6 {
   position: relative;
 }
 
+.container p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 0 15px 0;
+  font-family: "Poppins", sans-serif;
+  text-align: justify;
+
+}
+
 #hero h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 56px;
   color: #222222;
   font-family: "Poppins", sans-serif;
+  text-align: start;
 }
 
 #hero h1 span {
   color: #106eea;
+  margin-left: 5px;
 }
 
 #hero h2 {
@@ -517,6 +554,27 @@ h6 {
 #hero .btn-get-started:hover {
   background: #247cf0;
 }
+
+/* this is login btn  */
+#navbar .btn-get-started {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #106eea;
+
+}
+
+#navbar .btn-get-started:hover {
+  background: #247cf0;
+}
+
 .btn-get-started {
   display: inline-block;
   font-weight: 400;
@@ -530,14 +588,14 @@ h6 {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 
 .btn-get-started:hover {
   color: #fff;
   background-color: #0056b3;
-  border-color: #004a99;
+
 }
 
 #hero .btn-watch-video {
@@ -618,7 +676,7 @@ section {
 }
 
 .section-title h2 {
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 1px;
   font-weight: 700;
   padding: 8px 20px;
@@ -935,7 +993,7 @@ section {
 .services .icon-box {
   text-align: center;
   border: 1px solid #e2eefd;
-  padding: 80px 20px;
+  padding: 50px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
 }
@@ -1347,6 +1405,7 @@ section {
   opacity: 1;
   bottom: 15px;
 }
+
 /* 
 /*--------------------------------------------------------------
 # Pricing
@@ -1470,8 +1529,9 @@ section {
   padding: 0;
   list-style: none;
 }
-.faq .faq-more{
- padding-right: 10%;
+
+.faq .faq-more {
+  padding-right: 10%;
 }
 
 .faq .faq-list li {
@@ -1808,6 +1868,11 @@ section {
   background: #0d58ba;
 }
 
+.forgotpassword {
+  text-align: right;
+  font-size: 12px;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -1826,6 +1891,13 @@ section {
   font-size: 15px;
 }
 
+#footer .footer-newsletter .card-shawdo {
+  padding: 50px 0;
+  background: #9e9696;
+  text-align: center;
+  font-size: 15px;
+}
+
 #footer .footer-newsletter h4 {
   font-size: 24px;
   margin: 0 0 20px 0;
@@ -1836,7 +1908,7 @@ section {
 
 #footer .footer-newsletter form {
   margin-top: 30px;
-  background: #fff;
+  background: #f1f6fe;
   padding: 6px 10px;
   position: relative;
   border-radius: 50px;
@@ -1863,7 +1935,7 @@ section {
   color: #fff;
   transition: 0.3s;
   border-radius: 0 50px 50px 0;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.08);
 }
 
 #footer .footer-newsletter form input[type=submit]:hover {
@@ -1873,7 +1945,7 @@ section {
 #footer .footer-top {
   padding: 0px 0 0px 0;
   background: #f1f6fe;
- 
+
   padding-top: 50px;
 }
 
@@ -1975,10 +2047,10 @@ section {
   float: left;
 }
 
-#footer .credits {
+.credits {
   float: right;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   color: #444444;
 }
 
@@ -2031,11 +2103,14 @@ section {
 
 .trainers .member img {
   margin: -1px -1px 10px -1px;
+  height: 300px;
+  width: 300px;
 }
 
 
 .trainers .member .member-content {
   padding: 0 20px 30px 20px;
+
 }
 
 .trainers .member h4 {
@@ -2054,26 +2129,10 @@ section {
   padding-top: 10px;
   font-size: 14px;
   font-style: italic;
-  color: #aaaaaa;
+  color: #433d3d;
 }
 
-.trainers .member .social {
-  margin-top: 15px;
-}
 
-.trainers .member .social a {
-  color: #7e9486;
-  transition: 0.3s;
-}
-
-.trainers .member .social a:hover {
-  color: #5fcf80;
-}
-
-.trainers .member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
 
 /*----------------------------------------------------------------
 #Testimonial
@@ -2094,7 +2153,7 @@ section {
   position: relative;
   background: #fff;
   border-radius: 5px;
-  
+
 }
 
 .testimonials .testimonial-item .testimonial-img {
@@ -2691,7 +2750,3 @@ section {
   color: black;
   background-color: rgb(144, 49, 212);
 }
-
-
-
-
