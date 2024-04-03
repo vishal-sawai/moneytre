@@ -2,8 +2,13 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import Topbar from '../Component/Topbar';
 import Header from '../Component/Header';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Validation from '../Component/LoginValidation';
+import { GoogleLogin } from 'react-google-login';
+import { useNavigate } from 'react-router-dom';
+
+
+const clientId = "379584754029-ulud7jcf7ekdmreablefi60kuq2cc7ih.apps.googleusercontent.com";
 
 
 function Login() {
@@ -11,7 +16,7 @@ function Login() {
   const [values, setValues] = useState({
     email: '',
     password: ''
-  }); 
+  });
   const [errors, setErrors] = useState({});
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,9 +31,23 @@ function Login() {
     });
   }
 
+  const navigate = useNavigate();
+
+  // Google Login
+  const onSuccess = (res) => {
+    console.log('Login Success! currentUser:', res.profileObj);
+    localStorage.setItem('accessToken', res.accessToken);
+    // Redirect to Dashboard
+    navigate('/');
+  }
+
+  const onFailure = (res) => {
+    console.log('Login Failed:', res);
+  }
+
 
   return (
-    <div className='main'>
+    <div className='main' >
       <Topbar />
       <Header />
 
@@ -82,9 +101,20 @@ function Login() {
                         <p className="small mb-0">Don't have account?<a><NavLink to="/register" activeClassName="active"> Create an account</NavLink></a></p>
                       </div>
                     </form>
-
                   </div>
                 </div>
+              </div>
+              <span className="text-center fw-bold text-danger" style={{ fontSize: "20px" }}>OR</span>
+              <div className='flex'>
+                <GoogleLogin
+                  clientId={clientId}
+                  buttonText="Login with Google"
+                  onSuccess={onSuccess}
+                  onFailure={onFailure}
+                  cookiePolicy={'single_host_origin'}
+                  isSignedIn={true}
+                  className='btn btn-primary w-25 my-2 rounded-pill mx-auto d-flex align-items-center justify-content-center'
+                />
               </div>
 
               <div className="credits">
