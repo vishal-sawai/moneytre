@@ -20,8 +20,8 @@ function WhyUs() {
 
           </div>
         </div>
-<br></br>
-        <div class="container"  data-aos="fade-down">
+        <br></br>
+        <div class="container" data-aos="fade-down">
 
           <div class="section-title">
 

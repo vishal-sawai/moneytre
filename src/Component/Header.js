@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
 import { CgProfile } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
+import { MdLogout } from "react-icons/md";
 
 
 // Client id
@@ -47,9 +49,6 @@ function Header() {
     setAccessToken(accessToken);
   }
 
-  if (accessToken) {
-    console.log('Token:', accessToken);
-  }
 
   // Google Auth
   useEffect(() => {
@@ -59,10 +58,10 @@ function Header() {
         scope: ""
       }).then(() => {
         // Listen for sign-in state changes.
-        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+        // gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
         // Handle the initial sign-in state.
-        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+        // updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
       });
     };
     gapi.load("client:auth2", start);
@@ -73,17 +72,22 @@ function Header() {
 
   }, [accessToken]);
 
-  function updateSigninStatus(isSignedIn) {
-    if (isSignedIn) {
-      var accessToken = gapi.auth.getToken().access_token;
-      localStorage.setItem('accessToken', accessToken);
-    }
-  }
+  // function updateSigninStatus(isSignedIn) {
+  //   if (isSignedIn) {
+  //     var accessToken = gapi.auth.getToken().access_token;
+  //     localStorage.setItem('accessToken', accessToken);
+  //   }
+  // }
+
+  const navigate = useNavigate();
 
   const onSuccess = (res) => {
     console.log('Logout Success:');
     localStorage.removeItem('accessToken');
     setAccessToken(null);
+    // Redirect to Dashboard
+    navigate('/');
+
   }
 
   const [showMenu, setShowMenu] = useState(false);
@@ -134,22 +138,31 @@ function Header() {
             }
           </ul>
           {accessToken &&
-            <>
-              <div onClick={toggleDropdown} className="display-6"><CgProfile /></div>
+            <div className={`profile-dropdown ${showMenu ? 'd-none' : 'd-block'}`}>
+              <div onClick={toggleDropdown} style={{ fontSize: "30px", cursor: "pointer", margin: "10px" }}><CgProfile /></div>
               {dropdownOpen && (
-                <>
-                  <ul className="">
-                    <li><NavLink to="/profile">View Profile</NavLink></li>
-                    <li>
-                      <GoogleLogout
-                        clientId={clientId}
-                        buttonText="Logout"
-                        onLogoutSuccess={onSuccess}
-                      />
-                    </li>
-                  </ul>
-                </>)}
-            </>
+                <ul>
+                  <li className="mt-1"><Link to="/profile">View Profile</Link></li>
+                  <hr className="my-2" />
+                  <li>
+                    <GoogleLogout
+                      clientId={clientId}
+                      onLogoutSuccess={onSuccess}
+                      render={renderProps => (
+                        <button
+                          onClick={renderProps.onClick}
+                          disabled={renderProps.disabled}
+                          className="logOutBtn float-start rounded-1 px-3 py-1 fw-normal border-0"
+                        >
+                          Sign Out
+                          <MdLogout className="ms-2" />
+                        </button>
+                      )}
+                    />
+                  </li>
+                </ul>
+              )}
+            </div>
           }
           <div className={`mobile-nav-toggle ${showMenu ? 'toggle-x' : ''}`} onClick={toggleMenu}>
             <i className={`bi ${showMenu ? 'bi-x' : 'bi-list'}`}></i>

@@ -299,6 +299,37 @@ h6 {
   transition: 0.3s;
 }
 
+.profile-dropdown {
+  position: relative;
+  list-style: none;
+}
+
+.navbar .profile-dropdown ul {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 76px;
+  margin: 0;
+  padding: 10px 20px;
+  z-index: 80;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  width: 270px;
+}
+
+.logOutBtn {
+  background-color: transparent;
+  font-weight: 600 !important;
+  margin: 5px 0px !important;
+  padding: 0px !important;
+  color: gray;
+}
+
+.logOutBtn:hover {
+  color: rgb(111, 87, 87);
+}
+
 .navbar .dropdown ul li {
   min-width: 200px;
 }
@@ -2803,4 +2834,22 @@ section {
 .blog-details .comments .reply-form .btn-primary:hover {
   color: black;
   background-color: rgb(144, 49, 212);
+}
+
+
+/* Login form */
+.googleBtn {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .googleBtn {
+    width: 100%;
+  }
 }

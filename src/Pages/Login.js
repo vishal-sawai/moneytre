@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import Topbar from '../Component/Topbar';
@@ -6,6 +7,7 @@ import { useState } from 'react';
 import Validation from '../Component/LoginValidation';
 import { GoogleLogin } from 'react-google-login';
 import { useNavigate } from 'react-router-dom';
+
 
 
 const clientId = "379584754029-ulud7jcf7ekdmreablefi60kuq2cc7ih.apps.googleusercontent.com";
@@ -37,6 +39,8 @@ function Login() {
   const onSuccess = (res) => {
     console.log('Login Success! currentUser:', res.profileObj);
     localStorage.setItem('accessToken', res.accessToken);
+    localStorage.setItem('profileObj', JSON.stringify(res.profileObj));
+
     // Redirect to Dashboard
     navigate('/');
   }
@@ -113,7 +117,7 @@ function Login() {
                   onFailure={onFailure}
                   cookiePolicy={'single_host_origin'}
                   isSignedIn={true}
-                  className='btn btn-primary w-25 my-2 rounded-pill mx-auto d-flex align-items-center justify-content-center'
+                  className='googleBtn my-2 mx-auto d-flex align-items-center justify-content-center'
                 />
               </div>
 

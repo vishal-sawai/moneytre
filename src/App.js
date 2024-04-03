@@ -19,8 +19,8 @@ import Disclaimer from './Pages/Disclaimer';
 import Blogs from './Pages/Blogs';
 import ContactUsSection from './Component/ContactUsSection';
 import BlogDetails from './Pages/BlogDetails';
-import BlogDetails2 from './Pages/BlogDetails2';
 import ForgotPassword from './Pages/ForgotPassword';
+import Profile from './Pages/Profile';
 
 
 
@@ -49,9 +49,9 @@ function App() {
         <Route path="/onboardadvisory" element={<OnboardAdvisory />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/contactussection" element={<ContactUsSection />} />
-        <Route path="/blogdetails" element={<BlogDetails />} />
-        <Route path="/blogdetails2" element={<BlogDetails2 />} />
+        <Route path="/blogdetails/:id" element={<BlogDetails />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path='/profile' element={<Profile />} />
 
       </Routes>
     </BrowserRouter>
